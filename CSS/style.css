@@ -1,0 +1,225 @@
+/* ========== Global Rules =========== */
+:root {
+    --primary-color: #D9B41D;
+    --dark-color: #141414;
+    --white-color: #FCFCFC;
+}
+*, *::before, *::after {
+    direction: rtl;
+}
+body {
+    font-family: "Cairo", sans-serif;
+}
+.form-control:focus {
+    box-shadow: 0 0 0 .15rem rgba(217, 179, 29, 0.5) !important;
+}
+input::placeholder {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+input {
+    caret-color: var(--primary-color);
+    color: var(--white-color) !important;
+    font-size: 0.8rem !important;
+}
+.hide {
+    display: none;
+}
+input[type='search']::-webkit-search-cancel-button {
+    filter: grayscale(0.8);
+}
+#header_search:not(:hover):not(:focus):not([value=""]) + #search_icon {
+    display: none;
+}
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--dark-color);
+    --bs-btn-hover-border-color: #be9c11;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--primary-color);
+    --bs-btn-active-border-color: var(--primary-color);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--primary-color);
+    --bs-btn-disabled-border-color: var(--primary-color);
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+img {
+    max-width: 100%;
+}
+h2 {
+    position: relative;
+    color: var(--white-color);
+}
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25%;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+/* ========== Header =========== */
+#header {
+    background-color: var(--dark-color);
+}
+#header .header-right__search input, #search-services .search-input input{
+    border-radius: 50px !important;
+    background-color: rgba(255, 255, 255, 0.25);
+    border: none;
+}
+#header .header-right__search {
+    position: relative;
+}
+#header .header-right__search i, #search-services .search-input i {
+    position: absolute;
+    left: 0.5rem;
+    top: calc(50% - (0.8rem / 2));
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.25);
+}
+#header .row-border::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: radial-gradient(circle, rgba(252,252,252,1) 0%, rgba(20,20,20,1) 100%);
+}
+#header .header-menu, #header nav {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+#header .header-menu a {
+    font-size: 0.8rem;
+    transition: all 0.2s ease-in !important;
+}
+#header .header-menu .active {
+    color: var(--primary-color) !important;
+}
+#header .header-menu a:hover {
+    color: var(--primary-color) !important;
+}
+#sticky-header {
+    position: relative;
+}
+/* ========== Hero Content =========== */
+#hero-content{
+    background-image: url('../assets/images/hero-bg.gif');
+    background-color: gray;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-overlay {
+    background: linear-gradient(to left, var(--dark-color), rgba(20, 20, 20, 0.8));
+}
+#hero-content span {
+    display: block;
+    width: fit-content;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+}
+#hero-content p {
+    width: 40%;
+}
+/* ========== Main Services =========== */
+#main-services .title h2 {
+    width: fit-content;
+}
+#main-services .services__btns button {
+    border: 3px solid var(--primary-color);
+}
+#main-services .services__btns button:hover {
+    background-color: var(--dark-color) !important;
+    color: var(--white-color) !important;
+}
+/* ========== Search Services =========== */
+#search-services .search-input {
+    position: relative;
+}
+#search-services .search-input i {
+    left: 1rem;
+}
+#search-services .search-input input {
+    padding: 0.8rem 1rem;
+    box-shadow: 0 0 0 .15rem rgba(255, 255, 255, 0.15);
+}
+select{
+    background-color: rgba(255, 255, 255, 0.25);
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    height: 100% !important;
+    outline: 0 !important;
+}
+select option {
+    color: var(--dark-color) !important;
+    font-weight: 600;
+}
+#search-services .card {
+    border-color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+#search-services .card-content i {
+    color: var(--primary-color);
+}
+#search-services .card:hover {
+    background-color: var(--dark-color) !important;
+    transform: scale(1.025);
+}
+#search-services .row {
+    margin-top: 1rem !important;
+}
+/* ========== Image Attachement ========== */
+#fixed-image {
+    height: 40vh;
+    background-image: url('../assets/images/saudi-flag.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+#fixed-image .bg-overlay {
+    height: inherit;
+    background: linear-gradient(270deg, rgba(235,171,1,0.7) 0%, rgba(104,79,13,0.8) 50%, rgba(20,20,20,0.8) 100%);
+}
+#fixed-image span {
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+}
+/*  */
+#article .card {
+    border-color: rgba(217, 215, 217, 0.25);
+}
+#article .card:hover {
+    background-color: var(--dark-color) !important;
+}
+#article .card-body .explore {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-size: 0.9rem;
+
+}
+#article .card-body .explore:hover {
+    text-decoration: none;
+    color: #a88c19;
+}
+#footer p {
+    font-size: 0.6rem;
+    opacity: 0.6;
+    transition: 0.2s ease-in;
+}
+#footer p:hover {
+    opacity: 1;
+}
